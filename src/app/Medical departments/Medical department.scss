@@ -1,14 +1,28 @@
 .container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
 
+// Hero (same structure as Patient Care)
 .page-hero {
   position: relative;
-  min-height: 42vh;
+  min-height: 55vh;
   display: flex;
   align-items: center;
   padding: 3rem 1rem 4.5rem;
   color: #fff;
   text-align: center;
   overflow: hidden;
+}
+.page-hero__logo {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  z-index: 2;
+  display: block;
+  line-height: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+  &:hover { transform: scale(1.05); }
+  img { display: block; border-radius: 12px; width: 72px; height: 72px; }
 }
 .page-hero__bg {
   position: absolute;
@@ -28,6 +42,9 @@
 .page-hero__inner {
   position: relative;
   z-index: 1;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 .page-hero__title {
   font-size: 1.75rem;
