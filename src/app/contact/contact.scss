@@ -1,4 +1,4 @@
-.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+.container { max-width: var(--container); margin: 0 auto;}
 
 // Hero (same structure as Patient Care)
 .contact-hero {
@@ -75,6 +75,7 @@
 .contact-hero__text {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
+  padding-bottom: 20px;
   margin: 0;
   max-width: 560px;
   margin-left: auto;
@@ -205,7 +206,7 @@
 }
 .contact-main__form {
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: var(--radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
@@ -504,6 +505,7 @@
     gap: 2rem;
   }
   .contact-main__cards { position: static; }
+  .contact-main__heading { text-align: center; }
   .contact-main__form { padding: 1.5rem; }
 }
 
@@ -529,11 +531,12 @@
 @media (max-width: 480px) {
   .contact-hero { padding: 1.5rem 0.75rem; }
   .contact-hero__title { font-size: 1.4rem; }
+  .contact-main__heading { text-align: center; }
   .contact-card { padding: 1.5rem; }
   .section { padding: 1.5rem 0.75rem; }
   .contact-cta { padding: 2rem 0.75rem; }
   .contact-cta__title { font-size: 1.35rem; }
   .contact-footer { padding: 2rem 0.75rem 1rem; }
   .contact-form__input,
-  .contact-form__textarea { font-size: 16px; }
+  .contact-form__textarea { font-size: 16px;}
 }

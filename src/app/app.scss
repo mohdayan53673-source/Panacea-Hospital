@@ -64,12 +64,38 @@
 .topbar__item--center { margin-left: auto; margin-right: auto; }
 .topbar__icon { flex-shrink: 0; }
 
+// Fixed header wrapper (topbar + mainnav stay at top on scroll)
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  isolation: isolate;
+}
+
 .mainnav {
   background: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
+}
+// Scroll progress line at bottom of header (red line that fills as you scroll)
+.mainnav__scroll-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.mainnav__scroll-fill {
+  height: 100%;
+  background-color: red;
+  transition: width 0.1s ease-out;
 }
 .mainnav__inner {
   display: flex;
@@ -232,11 +258,13 @@
 
 .app-main {
   flex: 1;
+  padding-top: 7.5rem; // space for fixed header (~topbar + mainnav height)
   animation: fadeIn var(--anim-duration, 0.4s) var(--anim-ease, ease-out);
 }
 
 // Tablet and below: show hamburger, hide desktop links
 @media (max-width: 768px) {
+  .app-main { padding-top: 8.5rem; } // taller header when topbar wraps
   .topbar__item--center { margin-left: 0; margin-right: 0; }
   .topbar__inner { justify-content: center; }
   .topbar__item:first-child { order: 1; }
@@ -250,6 +278,7 @@
 }
 
 @media (max-width: 480px) {
+  .app-main { padding-top: 8rem; }
   .topbar { font-size: 0.75rem; padding: 0.5rem 0.75rem; }
   .topbar__item--center { font-size: 0.7rem; }
   .mainnav { padding: 0.5rem 0.75rem; }

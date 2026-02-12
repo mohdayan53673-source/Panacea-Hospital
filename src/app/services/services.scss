@@ -1,4 +1,4 @@
-.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+.container { max-width: var(--container); margin: 0 auto;}
 
 .page-hero {
   background: var(--panacea-blue-dark);
@@ -102,12 +102,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-}
-.service-card:hover {
-  box-shadow: var(--hover-shadow);
-  transform: var(--hover-lift);
-  border-color: var(--panacea-blue);
-  border: 3px solid transparent;
 }
 
 .service-card {

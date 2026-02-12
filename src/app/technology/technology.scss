@@ -1,4 +1,4 @@
-.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+.container { max-width: var(--container); margin: 0 auto;}
 
 // Hero (same structure as Patient Care)
 .tech-hero {
@@ -77,7 +77,7 @@
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.16s both;
 }
 .tech-hero__text:last-child {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 // Hero marquee (bottom strip with red sign + sliding text, same as Patient Care)

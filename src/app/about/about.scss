@@ -1,4 +1,4 @@
-.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+.container { max-width: var(--container); margin: 0 auto; }
 
 // Hero
 .about-hero {
@@ -43,7 +43,7 @@
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.16s both;
 }
 .about-hero__stats {
-  display: flex;
+  display: flex;  
   gap: 2rem;
   margin-top: 1.5rem;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.24s both;
@@ -128,7 +128,7 @@
   background: #fff;
   padding: 2rem;
   border-radius: var(--radius);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,10 +162,10 @@
   margin: 0 0 0.5rem;
 }
 .about-card__text {
-  font-size: 0.9rem;
+  font-size: 0.9rem;  
   color: var(--panacea-text-muted);
   margin: 0;
-  line-height: 1.55;
+    line-height: 1.55;
 }
 
 // Leadership
