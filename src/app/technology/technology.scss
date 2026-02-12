@@ -95,6 +95,12 @@
   font-weight: 700;
   letter-spacing: 0.05em;
 }
+.tech-hero__marquee-ambulance {
+  flex-shrink: 0;
+  color: #fff;
+  stroke: currentColor;
+  vertical-align: middle;
+}
 .tech-hero__marquee-dot {
   width: 8px;
   height: 8px;
@@ -125,8 +131,12 @@
   font-weight: 600;
 }
 .tech-hero__marquee-sep {
-  color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
+  animation: techMarqueeSepBlink 1.2s ease-in-out infinite;
+}
+@keyframes techMarqueeSepBlink {
+  0%, 100% { color: #fff; }
+  50% { color: var(--panacea-red); }
 }
 @keyframes techMarqueeSlide {
   0% { transform: translateX(0); }

@@ -128,8 +128,12 @@
   font-weight: 600;
 }
 .contact-hero__marquee-sep {
-  color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
+  animation: contactMarqueeSepBlink 1.2s ease-in-out infinite;
+}
+@keyframes contactMarqueeSepBlink {
+  0%, 100% { color: #fff; }
+  50% { color: var(--panacea-red); }
 }
 @keyframes contactMarqueeSlide {
   0% { transform: translateX(0); }
