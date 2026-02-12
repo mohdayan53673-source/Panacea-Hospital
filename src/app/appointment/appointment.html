@@ -1,0 +1,145 @@
+<div class="appointment-page">
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Book an Appointment</h1>
+      <p class="page-hero__desc">Schedule a visit with our specialists. Fill out the form below or call us directly. We are here to help.</p>
+    </div>
+  </section>
+
+  <div class="container appointment-layout">
+    <!-- Appointment form -->
+    <section class="appointment-form-section">
+      <h2 class="section-heading">Request an Appointment</h2>
+      <p class="section-desc">Submit your details and we will get back to you to confirm your slot.</p>
+
+      @if (submitted) {
+        <div class="success-msg">
+          <span class="success-msg__icon">✓</span>
+          <h3 class="success-msg__title">Request received</h3>
+          <p class="success-msg__text">Thank you! We will contact you shortly to confirm your appointment.</p>
+          <button type="button" class="btn btn--outline btn--blue" (click)="submitted = false">Book another</button>
+        </div>
+      } @else {
+        <form class="form" (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+          <div class="form__row">
+            <label class="form__label" for="name">Full Name <span class="form__required">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form__input"
+              placeholder="Enter your full name"
+              [(ngModel)]="model.name"
+              required
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label" for="phone">Phone Number <span class="form__required">*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form__input"
+              placeholder="e.g. 9876543210"
+              [(ngModel)]="model.phone"
+              required
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label" for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              placeholder="your@email.com"
+              [(ngModel)]="model.email"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label" for="department">Department / Specialty</label>
+            <select id="department" name="department" class="form__input form__select" [(ngModel)]="model.department">
+              <option value="">Select department</option>
+              <option value="General Medicine">General Medicine</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Orthopedics">Orthopedics</option>
+              <option value="Gynaecology">Gynaecology</option>
+              <option value="General Surgery">General Surgery</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Neurology">Neurology</option>
+              <option value="Ophthalmology">Ophthalmology (Eye)</option>
+              <option value="ENT">ENT</option>
+              <option value="Dental">Dental & Maxillofacial</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="Urology">Urology</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form__row form__row--half">
+            <div>
+              <label class="form__label" for="date">Preferred Date</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                class="form__input"
+                [(ngModel)]="model.date"
+              />
+            </div>
+            <div>
+              <label class="form__label" for="time">Preferred Time</label>
+              <select id="time" name="time" class="form__input form__select" [(ngModel)]="model.time">
+                <option value="">Select time</option>
+                <option value="09:00 - 10:00">09:00 - 10:00</option>
+                <option value="10:00 - 11:00">10:00 - 11:00</option>
+                <option value="11:00 - 12:00">11:00 - 12:00</option>
+                <option value="12:00 - 13:00">12:00 - 13:00</option>
+                <option value="14:00 - 15:00">14:00 - 15:00</option>
+                <option value="15:00 - 16:00">15:00 - 16:00</option>
+                <option value="16:00 - 17:00">16:00 - 17:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row">
+            <label class="form__label" for="message">Message (optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              class="form__input form__textarea"
+              placeholder="Any specific concern or note..."
+              rows="3"
+              [(ngModel)]="model.message"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block" [disabled]="!appointmentForm.valid">
+            Submit Request
+          </button>
+        </form>
+      }
+    </section>
+
+    <!-- Contact to book -->
+    <aside class="contact-sidebar">
+      <div class="contact-card">
+        <h3 class="contact-card__title">Call to Book</h3>
+        <p class="contact-card__text">Our team will help you fix a slot quickly.</p>
+        <a href="tel:7088808000" class="contact-card__phone">7088808000</a>
+        <a href="tel:7617564028" class="contact-card__phone">7617564028</a>
+      </div>
+      <div class="contact-card">
+        <h3 class="contact-card__title">Visit Us</h3>
+        <p class="contact-card__address">Near Railway Crossing, Joya Road, Amroha - 244221 (UP)</p>
+        <a routerLink="/contact" class="btn btn--outline btn--blue btn--block">Get Directions</a>
+      </div>
+      <div class="contact-card">
+        <h3 class="contact-card__title">Email</h3>
+        <a href="mailto:phrcamro@gmail.com" class="contact-card__link">phrcamro&#64;gmail.com</a>
+      </div>
+      <div class="emergency-cta">
+        <h3 class="emergency-cta__title">24/7 Emergency?</h3>
+        <a href="tel:7088808000" class="btn btn--primary btn--block">Call Emergency: 7088808000</a>
+      </div>
+    </aside>
+  </div>
+</div>

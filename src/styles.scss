@@ -1,0 +1,119 @@
+:root {
+  --panacea-blue: #2563eb;
+  --panacea-blue-dark: #1e40af;
+  --panacea-text-dark: #1e293b;
+  --panacea-text-muted: #64748b;
+  --panacea-bg: #f8fafc;
+  --panacea-bg-grey: #f1f5f9;
+  --panacea-border: #e2e8f0;
+  --panacea-green: #22c55e;
+  --panacea-red: #dc2626;
+  --panacea-pink: #ec4899;
+  --radius: 10px;
+  --container: 1200px;
+  --container-padding: 1rem;
+  --anim-duration: 0.5s;
+  --anim-ease: ease-out;
+  --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --hover-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --hover-lift: translateY(-4px);
+  --hover-transition: transform 0.25s var(--anim-ease), box-shadow 0.25s var(--anim-ease);
+}
+
+// Global keyframes (available in all components)
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUpShort {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes hoverLift {
+  to { transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --anim-duration: 0.01ms; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+* { box-sizing: border-box; }
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--panacea-text-dark);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+// Hide default cursor on desktop so only the custom logo follower shows
+@media (hover: hover) and (pointer: fine) {
+  html, body { cursor: none; }
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 0.75rem;
+  }
+}
+
+.favicon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+

@@ -1,0 +1,5 @@
+.page { padding: 2rem 1rem; animation: fadeIn var(--anim-duration) var(--anim-ease) both; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+@media (max-width: 480px) {
+  :host { display: block; padding: 1rem 0.75rem; }
+}

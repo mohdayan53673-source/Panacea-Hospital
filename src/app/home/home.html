@@ -1,0 +1,196 @@
+<div class="home">
+  <!-- Hero - carousel with 8 slides (repeated loop) -->
+  <section class="hero">
+    <div class="hero__carousel" aria-hidden="true">
+      <div class="hero__slide hero__slide--1"></div>
+      <div class="hero__slide hero__slide--2"></div>
+      <div class="hero__slide hero__slide--3"></div>
+      <div class="hero__slide hero__slide--4"></div>
+      <div class="hero__slide hero__slide--5"></div>
+      <div class="hero__slide hero__slide--6"></div>
+      <div class="hero__slide hero__slide--7"></div>
+      <div class="hero__slide hero__slide--8"></div>
+    </div>
+    <div class="hero__carousel-overlay" aria-hidden="true"></div>
+    <!-- Marquee strip at bottom: emergency red sign + home-related sliding text -->
+    <div class="hero__marquee">
+      <div class="hero__marquee-sign">
+        <svg class="hero__marquee-ambulance" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 18v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3M4 18V9m0-1 2-4h12l2 4v10M4 18h16"/>
+          <circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/>
+          <path d="M11 11h2v4h-2zM10 13h4v2h-4z"/>
+        </svg>
+        <span class="hero__marquee-dot"></span>
+        <span>EMERGENCY</span>
+      </div>
+      <div class="hero__marquee-track" aria-hidden="true">
+        <div class="hero__marquee-inner">
+          <span>24/7 Emergency Care</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>NABH Accredited</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>Ayushman Bharat</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>Multi-Speciality Hospital</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>Amroha</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>24/7 Emergency Care</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>NABH Accredited</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>Ayushman Bharat</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>Multi-Speciality Hospital</span>
+          <span class="hero__marquee-sep">•</span>
+          <span>Amroha</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__card"><strong>15+</strong> Years Experience</div>
+        <div class="stats__card"><strong>5000+</strong> Surgeries Done</div>
+        <div class="stats__card"><strong>100+</strong> Bed Capacity</div>
+        <div class="stats__card"><strong>24/7</strong> Emergency Care</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Panacea -->
+  <section class="section section--grey">
+    <div class="container">
+      <h2 class="section__title">Why Choose Panacea?</h2>
+      <p class="section__tagline">Dedicated to providing high-quality healthcare using global standards right in the heart of Amroha.</p>
+      <div class="cards cards--three">
+        <div class="card">
+          <div class="card__icon card__icon--blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="card__title">NABH Accreditation</h3>
+          <p class="card__text">We adhere to stringent clinical protocols and quality standards for your safety and best outcomes.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="card__title">Ayushman Bharat</h3>
+          <p class="card__text">Cashless treatment under PMJAY for eligible beneficiaries. Quality care accessible to all.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01"/></svg>
+          </div>
+          <h3 class="card__title">Modular OTs</h3>
+          <p class="card__text">State-of-the-art operating theatres with advanced equipment for complex procedures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Medical Specialties -->
+  <section class="section section--grey">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title section__title--left">Our Medical Specialties</h2>
+          <p class="section__tagline section__tagline--left">Comprehensive care across all major disciplines under one roof.</p>
+        </div>
+        <a routerLink="/medical-departments-services" class="section__link">View All Departments →</a>
+      </div>
+      <div class="cards cards--specialty">
+        <div class="card card--specialty">  
+          <div class="card__icon card__icon--red"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3 class=" ">Cardiology</h3>
+          <p class="card__text">Heart care and cardiovascular treatments.</p>
+        </div>
+        <div class="card card--specialty">
+          <div class="card__icon card__icon--blue"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 2H9a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M9 6h6M9 10h6M9 14h4"/></svg></div>
+          <h3 class="card__title">Orthopedics</h3>
+          <p class="card__text">Bone, joint and muscle care.</p>
+        </div>
+        <div class="card card--specialty">
+          <div class="card__icon card__icon--pink"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3 class="card__title">Gynaecology</h3>
+          <p class="card__text">Women's health and maternity care.</p>
+        </div>
+        <div class="card card--specialty">
+          <div class="card__icon card__icon--green"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+          <h3 class="card__title">General Surgery</h3>
+          <p class="card__text">Laparoscopic and general procedures.</p>
+        </div>
+        <div class="card card--specialty ">
+          <div class="card__icon card__icon--blue"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+          <h3 class="card__title">Pediatrics</h3>
+          <p class="card__text">Child health and neonatology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Medical Technology -->
+  <section class="tech">
+    <div class="container">
+      <div class="tech__row">
+        <div class="tech__image-wrap">
+          <div class="tech__image" aria-hidden="true"></div>
+          <span class="tech__badge">24/7 DIAGNOSTIC SUPPORT</span>
+        </div>
+        <div class="tech__content">
+          <span class="tech__label">Our Facilities</span>
+          <h2 class="tech__title">Latest Medical Technology</h2>
+          <p class="tech__desc">We believe that advanced technology is the backbone of accurate diagnosis and successful treatment. Panacea Hospital is equipped with the latest diagnostic and surgical tools.</p>
+          <ul class="tech__list">
+            <li class="tech__item">
+              <span class="tech__check" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Digital X-Ray &amp; Advanced Imaging</span>
+            </li>
+            <li class="tech__item">
+              <span class="tech__check" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Automated Pathology Lab</span>
+            </li>
+            <li class="tech__item">
+              <span class="tech__check" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Advanced ICU &amp; Ventilator Support</span>
+            </li>
+          </ul>
+          <a routerLink="/facilities" class="btn btn--primary">Explore Our Facility</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Our Hospital -->
+  <section class="visit">
+    <div class="container visit__inner">
+      <div class="visit__info">
+        <h2 class="visit__title">Visit Our Hospital</h2>
+        <p class="visit__desc">Conveniently located in Amroha to serve you better. Reach out to us for any queries or emergencies.</p>
+        <p class="visit__item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><strong>Our Address:</strong> Near Railway Crossing, Joya Road, Amroha - 244221 (UP)</span>
+        </p>
+        <p class="visit__item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span><strong>Email Us:</strong> info&#64;panaceahospitalamroha.com</span>
+        </p>
+      </div>
+      <div class="visit__map-wrap">
+        <div class="visit__map-pin" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <a href="https://maps.google.com/?q=Joya+Road+Amroha+244221" target="_blank" rel="noopener" class="btn btn--white btn--red">Get Directions</a>
+      </div>
+    </div>
+  </section>
+</div>

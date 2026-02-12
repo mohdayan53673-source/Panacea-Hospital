@@ -1,0 +1,114 @@
+<div class="app-shell">
+  <!-- Cursor follower: small logo follows the mouse (hidden on touch devices) -->
+  @if (cursorVisible) {
+    <div class="cursor-follower" [style.left.px]="cursorX" [style.top.px]="cursorY" aria-hidden="true">
+      <img src="/Panacea_favicon.png" alt="" width="32" height="32" />
+    </div>
+  }
+  <!-- Top bar - dark blue -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <span class="topbar__item">
+        <svg class="topbar__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        24/7 Emergency: +91-7088808000
+      </span>
+      <span class="topbar__item topbar__item--center">
+        <svg class="topbar__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Joya Road, Amroha, Uttar Pradesh
+      </span>
+      <span class="topbar__item">
+        <svg class="topbar__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Ayushman Bharat Portal
+      </span>
+    </div>
+  </header>
+
+  <!-- Main nav - white -->
+  <nav class="mainnav" [class.mainnav--open]="menuOpen">
+    <div class="mainnav__inner">
+      <a routerLink="/" class="mainnav__logo" (click)="closeMenu()">
+        <span class="mainnav__logo-icon">+</span>
+        <span class="mainnav__logo-text">PANACEA HOSPITAL &amp; RESEARCH CENTER</span>
+      </a>
+      <ul class="mainnav__links">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">HOME</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">ABOUT US</a></li>
+        <li><a routerLink="/medical-departments-services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">MEDICAL DEPARTMENT &amp; SERVICES</a></li>
+        <li><a routerLink="/technology">TECHNOLOGY</a></li>
+        <li><a routerLink="/patient-care" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">PATIENT CARE</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">CONTACT</a></li>
+        <li class="mainnav__links-cta"><a routerLink="/appointment" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" class="mainnav__cta mainnav__cta--desktop">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </a></li>
+      </ul>
+      <button type="button" class="mainnav__menu-btn" aria-label="Toggle menu" (click)="toggleMenu()" aria-expanded="menuOpen">
+        <span class="mainnav__menu-icon"></span>
+        <span class="mainnav__menu-icon"></span>
+        <span class="mainnav__menu-icon"></span>
+      </button>
+    </div>
+    <div class="mainnav__mobile" [class.mainnav__mobile--open]="menuOpen">
+      <ul class="mainnav__mobile-links">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">HOME</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">ABOUT US</a></li>
+        <li><a routerLink="/medical-departments-services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">MEDICAL DEPARTMENT &amp; SERVICES</a></li>
+        <li><a routerLink="/technology" (click)="closeMenu()">TECHNOLOGY</a></li>
+        <li><a routerLink="/patient-care" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">PATIENT CARE</a></li>
+        <li><a routerLink="/contact" (click)="closeMenu()">CONTACT</a></li>
+        <li><a routerLink="/appointment" class="mainnav__mobile-cta" (click)="closeMenu()">Book Appointment</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <router-outlet />
+  </main>
+
+  <!-- Shared footer (same on every page) -->
+  <footer class="footer">
+    <div class="footer__container footer__grid">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <span class="mainnav__logo-icon">+</span>
+          <span>PANACEA</span>
+        </div>
+        <p class="footer__about">Your trusted healthcare partner in Amroha. Committed to delivering excellence in multi-speciality medical services.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Share">&#x2398;</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/medical-departments-services">Medical Department &amp; Services</a></li>
+          <li><a routerLink="/technology">Technology</a></li>
+          <li><a routerLink="/patient-care">Patient Care</a></li>
+          <li><a routerLink="/contact">Contact Us</a></li>
+          <li><a routerLink="/appointment">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Departments</h4>
+        <ul class="footer__links">
+          <li><a routerLink="/medical-departments-services">Cardiology</a></li>
+          <li><a routerLink="/medical-departments-services">Orthopedics</a></li>
+          <li><a routerLink="/medical-departments-services">General Medicine</a></li>
+          <li><a routerLink="/medical-departments-services">Pediatrics</a></li>
+          <li><a routerLink="/medical-departments-services">Eye &amp; ENT</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Accreditations</h4>
+        <div class="footer__badges">
+          <span class="footer__badge">NABH ACCREDITED</span>
+          <span class="footer__badge">AYUSHMAN BHARAT</span>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copy">&copy; {{ currentYear }} Panacea Hospital &amp; Research Center, Amroha. All rights reserved.</p>
+  </footer>
+</div>
