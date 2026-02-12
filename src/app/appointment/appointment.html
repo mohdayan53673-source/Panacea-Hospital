@@ -21,7 +21,7 @@
           <button type="button" class="btn btn--outline btn--blue" (click)="submitted = false">Book another</button>
         </div>
       } @else {
-        <form class="form" (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+        <form class="form" (ngSubmit)="onSubmit(appointmentForm)" #appointmentForm="ngForm">
           <div class="form__row">
             <label class="form__label" for="name">Full Name <span class="form__required">*</span></label>
             <input

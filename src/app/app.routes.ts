@@ -9,7 +9,6 @@ export const routes: Routes = [
   { path: 'patient-care', loadComponent: () => import('./patient-care/patient-care').then(m => m.PatientCare) },
   { path: 'about', loadComponent: () => import('./about/about').then(m => m.About) },
   { path: 'appointment', loadComponent: () => import('./appointment/appointment').then(m => m.Appointment) },
-  { path: 'contact', loadComponent: () => import('./contact/contact').then(m => m.Contact) },
-  { path: 'testimonials', loadComponent: () => import('./testimonials').then(m => m.Testimonials) },
+  { path: 'contact', loadComponent: () => import('./contact/contact').then(m => m.Contact) },  
   { path: '**', redirectTo: '' },
 ];

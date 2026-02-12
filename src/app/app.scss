@@ -49,7 +49,18 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.topbar__item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.topbar__item:hover {
+  opacity: 0.9;
+}
 .topbar__item--center { margin-left: auto; margin-right: auto; }
 .topbar__icon { flex-shrink: 0; }
 
