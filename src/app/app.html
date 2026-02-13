@@ -36,6 +36,7 @@
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">HOME</a></li>
         <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">ABOUT US</a></li>
         <li><a routerLink="/medical-departments-services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">MEDICAL DEPARTMENT &amp; SERVICES</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">SERVICES</a></li>
         <li><a routerLink="/technology">TECHNOLOGY</a></li>
         <li><a routerLink="/patient-care" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">PATIENT CARE</a></li>
         <li><a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">CONTACT</a></li>
@@ -55,6 +56,7 @@
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">HOME</a></li>
         <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">ABOUT US</a></li>
         <li><a routerLink="/medical-departments-services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">MEDICAL DEPARTMENT &amp; SERVICES</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">SERVICES</a></li>
         <li><a routerLink="/technology" (click)="closeMenu()">TECHNOLOGY</a></li>
         <li><a routerLink="/patient-care" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="closeMenu()">PATIENT CARE</a></li>
         <li><a routerLink="/contact" (click)="closeMenu()">CONTACT</a></li>
@@ -73,7 +75,7 @@
   </main>
 
   <!-- Shared footer (same on every page) -->
-  <!-- <footer class="footer">
+  <footer class="footer">
     <div class="footer__container footer__grid">
       <div class="footer__col">
         <div class="footer__logo">
@@ -92,6 +94,7 @@
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/about">About Us</a></li>
           <li><a routerLink="/medical-departments-services">Medical Department &amp; Services</a></li>
+          <li><a routerLink="/services">Services</a></li>
           <li><a routerLink="/technology">Technology</a></li>
           <li><a routerLink="/patient-care">Patient Care</a></li>
           <li><a routerLink="/contact">Contact Us</a></li>
@@ -117,5 +120,5 @@
       </div>
     </div>
     <p class="footer__copy">&copy; {{ currentYear }} Panacea Hospital &amp; Research Center, Amroha. All rights reserved.</p>
-  </footer> -->
+  </footer>
 </div>

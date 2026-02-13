@@ -288,7 +288,8 @@
 
 // Shared footer (same on every page)
 .footer {
-  background: var(--panacea-bg-grey);
+  background: #000;
+  color: #fff;
   padding: 3rem 1rem 1.5rem;
   margin-top: auto;
 }
@@ -309,12 +310,12 @@
   gap: 0.5rem;
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--panacea-text-dark);
+  color: #fff;
   margin-bottom: 0.75rem;
 }
 .footer__about {
   font-size: 0.9rem;
-  color: var(--panacea-text-muted);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0 0 1rem;
   line-height: 1.5;
   max-width: 280px;
@@ -324,8 +325,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--panacea-border);
-  color: var(--panacea-text-muted);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -334,8 +335,8 @@
   transition: color 0.2s, background 0.2s, box-shadow 0.25s var(--anim-ease), transform 0.25s var(--anim-ease);
 }
 .footer__social a:hover {
-  color: var(--panacea-blue);
-  background: rgba(37, 99, 235, 0.12);
+  color: #fff;
+  background: var(--panacea-blue);
   box-shadow: var(--hover-shadow-sm);
   transform: translateY(-2px);
 }
@@ -343,39 +344,39 @@
   font-size: 0.9rem;
   font-weight: 700;
   margin: 0 0 0.75rem;
-  color: var(--panacea-text-dark);
+  color: #fff;
 }
 .footer__links { list-style: none; margin: 0; padding: 0; }
 .footer__links li { margin-bottom: 0.5rem; }
 .footer__links a {
-  color: var(--panacea-text-muted);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s, transform 0.2s var(--anim-ease);
 }
 .footer__links a:hover {
-  color: var(--panacea-blue);
+  color: #fff;
   transform: translateX(4px);
 }
 .footer__badges { display: flex; flex-direction: column; gap: 0.5rem; }
 .footer__badge {
   display: inline-block;
-  border: 1px solid var(--panacea-border);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0.5rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  color: var(--panacea-text-muted);
+  color: #fff;
   border-radius: 6px;
   width: fit-content;
 }
 .footer__copy {
   text-align: center;
   font-size: 0.8rem;
-  color: var(--panacea-text-muted);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--panacea-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 900px) {
