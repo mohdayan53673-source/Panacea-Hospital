@@ -36,10 +36,10 @@
 .page-hero__label {
   font-size: 0.75rem;
   text-align: start;
+  color:red;
   font-weight: 700;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase; 
   margin: 0 0 0.75rem;
   line-height: 1.3;
 }
@@ -52,7 +52,8 @@
 }
 .page-hero__desc {
   font-size: 1rem;
-  text-align: start;
+  text-align: start; 
+  color: white;
   opacity: 0.95;
   margin: 0 0 1rem;
   max-width: 640px;
@@ -61,7 +62,9 @@
   line-height: 1.6;
 }
 .page-hero__desc--last {
-  margin-bottom: 0;
+  padding-bottom: 20px;
+  color:white;
+
 }
 
 // Hero marquee (bottom strip with red sign + sliding text)
@@ -167,7 +170,7 @@
   gap: 2.5rem;
 }
 .service-block {
-  background: #fff;
+  background: #fff; 
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
   overflow: hidden;
@@ -213,7 +216,7 @@
   background: var(--panacea-bg-grey);
   overflow: hidden;
 }
-.service-block__image {
+.service-block__image {  
   width: 100%;
   height: 100%;
   min-height: 260px;
@@ -227,25 +230,25 @@
 }
 .service-block__content {
   padding: 2rem 2.25rem;
-  display: flex;
+  display: flex; 
   align-items: center;
   background: #fafbfc;
   border-left: 1px solid rgba(0, 0, 0, 0.06);
 }
 .service-block--reverse .service-block__content {
   border-left: none;
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  border-right: 1px solid rgba(0, 0, 0, 0.06);  
 }
 .service-block__text {
   font-size: 1rem;
-  color: var(--panacea-text-muted);
-  margin: 0;
-  line-height: 1.7;
+    color: var(--panacea-text-muted);
+  margin: 0; 
+  line-height: 1.7;   
   font-weight: 400;
 }
 
 .cta-block {
-  text-align: center;
+  text-align: center; 
   padding: 2rem 1rem;
 }
 .cta-block__title {
@@ -283,35 +286,35 @@
 
 @media (max-width: 900px) {
   .service-block__row,
-  .service-block--reverse .service-block__row { grid-template-columns: 1fr; min-height: auto; }
+  .service-block--reverse .service-block__row { grid-template-columns: 1fr; min-height: auto;}
   .service-block--reverse .service-block__image-wrap,
-  .service-block--reverse .service-block__content { order: unset; }
-  .service-block__image-wrap { min-height: 240px; }
-  .service-block__image { min-height: 240px; }
+  .service-block--reverse .service-block__content { order: unset;}
+  .service-block__image-wrap { min-height: 240px;}
+  .service-block__image { min-height: 240px;}
   .service-block__content { padding: 1.75rem 1.5rem; border-left: none; border-right: none; border-top: 1px solid rgba(0, 0, 0, 0.06); }
-  .service-block--reverse .service-block__content { border-top: 1px solid rgba(0, 0, 0, 0.06); }
+  .service-block--reverse .service-block__content { border-top: 1px solid rgba(0, 0, 0, 0.06);}
 }
 
 @media (max-width: 600px) {
   .page-hero__label { font-size: 0.65rem; letter-spacing: 0.15em; margin-bottom: 0.5rem; }
   .page-hero__title { font-size: 1.4rem; margin-bottom: 1rem; }
-  .page-hero__desc { font-size: 0.95rem; margin-bottom: 0.85rem; }
+  .page-hero__desc { font-size: 0.95rem; margin-bottom: 0.85rem;}
   .section { padding: 2rem 1rem; }
   .section__title { font-size: 1.4rem; }
   .service-list { gap: 2rem; }
-  .service-block__heading { font-size: 1.15rem; padding: 1rem 1.25rem; letter-spacing: 0.03em; }
+  .service-block__heading { font-size: 1.15rem; padding: 1rem 1.25rem; letter-spacing: 0.03em;}
   .service-block__image-wrap { min-height: 220px; }
   .service-block__image { min-height: 220px; }
-  .service-block__content { padding: 1.5rem 1.25rem; }
-  .service-block__text { font-size: 0.95rem; line-height: 1.65; }
+  .service-block__content { padding: 1.5rem 1.25rem;}
+  .service-block__text { font-size: 0.95rem; line-height: 1.65;}
   .cta-block__actions { flex-direction: column; }
-  .cta-block__actions .btn { width: 100%; justify-content: center; }
+  .cta-block__actions .btn {width: 100%; justify-content: center;}
 }
 
 @media (max-width: 480px) {
-  .page-hero { padding: 1.5rem 0.75rem; min-height: 50vh; }
-  .page-hero__title { font-size: 1.25rem; }
-  .page-hero__desc { font-size: 0.9rem; }
-  .section { padding: 1.5rem 0.75rem; }
-  .section__tagline { font-size: 0.9rem; }
+  .page-hero { padding: 1.5rem 0.75rem; min-height: 50vh;}
+  .page-hero__title { font-size: 1.25rem;}
+  .page-hero__desc { font-size: 0.9rem;}
+  .section { padding: 1.5rem 0.75rem;}
+  .section__tagline { font-size: 0.9rem;}
 }

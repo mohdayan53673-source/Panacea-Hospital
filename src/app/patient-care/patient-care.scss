@@ -51,8 +51,8 @@
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.95);
+  color:red;  
+  letter-spacing: 0.1em;  
   margin-bottom: 0.75rem;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) both;
 }
@@ -71,13 +71,14 @@
 }
 .care-hero__text {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   margin: 0 0 1rem;
   line-height: 1.6;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.16s both;
 }
 .care-hero__text:last-child {
   margin-bottom: 20px;
+  color: white;
 }
 
 // Hero marquee (bottom strip with red sign + sliding text)
@@ -197,7 +198,7 @@
 .care-card {
   background: #fff;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: var(--radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   border: 3px solid transparent;
@@ -215,7 +216,7 @@
 .care-card:nth-child(4) { animation-delay: 0.24s; }
 .care-card__icon {
   width: 52px;
-  height: 52px;
+  height: 52px;  
   border-radius: 10px;
   background: rgba(37, 99, 235, 0.12);
   color: var(--panacea-blue);
@@ -227,7 +228,7 @@
   margin-right: auto;
 }
 .care-card__title {
-  font-size: 1.15rem;
+  font-size: 1.15rem;  
   font-weight: 700;
   color: var(--panacea-text-dark);
   margin: 0 0 0.5rem;

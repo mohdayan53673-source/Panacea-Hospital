@@ -48,11 +48,11 @@
   max-width: 720px;
 }
 .tech-hero__badge {
-  display: inline-block;
+  display: inline-block; 
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 700; 
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.95);
+  color:red;
   margin-bottom: 0.75rem;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) both;
 }
@@ -71,13 +71,14 @@
 }
 .tech-hero__text {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   margin: 0 0 1rem;
   line-height: 1.6;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.16s both;
 }
 .tech-hero__text:last-child {
   margin-bottom: 20px;
+  color:white;
 }
 
 // Hero marquee (bottom strip with red sign + sliding text, same as Patient Care)
@@ -229,9 +230,9 @@
 }
 .vision-content__text {
   font-size: 0.95rem;
-  color: var(--panacea-text-muted);
-  margin: 0;
-  line-height: 1.6;
+  color: var(--panacea-text-muted);  
+  margin: 0;  
+  line-height: 1.6; 
   text-align: left;
 }
 .vision-image {
@@ -256,7 +257,7 @@
 .tech-grid--three { grid-template-columns: repeat(3, 1fr); }
 .tech-card {
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   border-radius: var(--radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -269,7 +270,7 @@
   box-shadow: var(--hover-shadow);
   transform: var(--hover-lift);
 }
-.tech-card:nth-child(1) { animation-delay: 0.06s; }
+.tech-card:nth-child(1) { animation-delay: 0.06s;}
 .tech-card:nth-child(2) { animation-delay: 0.12s; }
 .tech-card:nth-child(3) { animation-delay: 0.18s; }
 .tech-card:nth-child(4) { animation-delay: 0.24s; }
@@ -289,7 +290,7 @@
 }
 .tech-card__title {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 700;  
   color: var(--panacea-text-dark);
   margin: 0 0 0.5rem;
 }
@@ -308,7 +309,7 @@
   font-size: 0.95rem;
   color: var(--panacea-text-muted);
   line-height: 1.7;
-}
+} 
 .tech-list li {
   margin-bottom: 0.75rem;
 }

@@ -42,7 +42,7 @@
 }
 .topbar__inner {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -266,7 +266,7 @@
 @media (max-width: 768px) {
   .app-main { padding-top: 8.5rem; } // taller header when topbar wraps
   .topbar__item--center { margin-left: 0; margin-right: 0; }
-  .topbar__inner { justify-content: center; }
+  .topbar__inner { justify-content: center;}
   .topbar__item:first-child { order: 1; }
   .topbar__item--center { order: 3; width: 100%; justify-content: center; text-align: center; }
   .topbar__item:last-child { order: 2; }
@@ -317,7 +317,7 @@
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.85);
   margin: 0 0 1rem;
-  line-height: 1.5;
+  line-height: 1.5;  
   max-width: 280px;
 }
 .footer__social { display: flex; gap: 0.5rem; }
