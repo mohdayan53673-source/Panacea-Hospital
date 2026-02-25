@@ -1,34 +1,61 @@
 .container { max-width: var(--container); margin: 0 auto; }
 
-// Hero
+// Hero (full-width bg + marquee, same structure as Contact / Patient Care / Technology)
 .about-hero {
-  background: var(--panacea-bg-grey);
-  padding: 3rem 1rem;
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 1rem 4.5rem;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1600&q=80');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--panacea-blue-dark);
+}
+.about-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.88) 100%);
 }
 .about-hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  position: relative;
+  z-index: 1;
   max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.about-hero__content {
+  max-width: 640px;
   margin: 0 auto;
 }
 .about-hero__badge {
-  display: inline-block;     
-  color:red;
-  width:1260px;  
-  font-size: 0.75rem;  
+  display: inline-block;
+  width: 100%;
+  text-align: start;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
+  color: #dc2626;
   margin-bottom: 0.75rem;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) both;
 }
 .about-hero__title {
-  font-size: 2.25rem;
-  font-weight: 700;  
-  color: var(--panacea-text-dark);
-  margin: 0 0 1rem;
+  font-size: 2rem;
+  text-align: start;
+  
+  font-weight: 700;
+  margin: 0 0 0.75rem;
   line-height: 1.25;
+  color: #fff;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.08s both;
 }
 .about-hero__title-underline {
@@ -38,16 +65,107 @@
 }
 .about-hero__text {
   font-size: 0.95rem;
-  color: var(--panacea-text-muted);
-  margin: 0 0 1rem;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.16s both;
 }
+
+// Hero marquee (bottom strip with red sign + sliding text, same as other pages)
+.about-hero__marquee {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  background: rgba(15, 23, 42, 0.92);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  overflow: hidden;
+}
+.about-hero__marquee-sign {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem 0 1.25rem;
+  height: 100%;
+  min-width: 90px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.about-hero__marquee-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: aboutMarqueePulse 1.2s ease-in-out infinite;
+}
+@keyframes aboutMarqueePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.9); }
+}
+.about-hero__marquee-track {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 0.5rem;
+}
+.about-hero__marquee-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-left: 100%;
+  white-space: nowrap;
+  animation: aboutMarqueeSlide 25s linear infinite;
+}
+.about-hero__marquee-inner span {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.about-hero__marquee-sep {
+  font-weight: 400;
+  animation: aboutMarqueeSepBlink 1.2s ease-in-out infinite;
+}
+@keyframes aboutMarqueeSepBlink {
+  0%, 100% { color: #fff; }
+  50% { color: var(--panacea-red); }
+}
+@keyframes aboutMarqueeSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+// About intro (story + stats + image, below hero)
+.about-intro__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.about-intro__text {
+  font-size: 0.95rem;
+  color: var(--panacea-text-muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
 .about-hero__stats {
-  display: flex;  
+  display: flex;
   gap: 2rem;
-  margin-top: 1.5rem;
-  animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.24s both;
+  margin-top: 0;
+  flex-wrap: wrap;
 }
 .stat {
   display: flex;
@@ -67,13 +185,11 @@
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.12s both;
 }
 .about-hero__image {
   width: 100%;
   height: auto;
   display: block;
-  vertical-align: middle;
 }
 
 // Section
@@ -84,7 +200,7 @@
   font-weight: 700;
   color: var(--panacea-text-dark);
   margin: 0 0 0.5rem;
-  text-align: center;
+    text-align: center;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) both;
 }
 .section__title--left { text-align: left; }
@@ -184,6 +300,9 @@
   transition: var(--hover-transition);
 }
 .leader-card:hover {
+  border-color: var(--panacea-blue);
+
+ 
   box-shadow: var(--hover-shadow);
   transform: var(--hover-lift);
 }
@@ -315,7 +434,7 @@
 }
 .about-footer__social a {
   width: 36px;
-  height: 36px;
+  height: 36px;  
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
@@ -374,7 +493,7 @@
 .about-footer__legal a:hover { text-decoration: underline; }
 
 @media (max-width: 900px) {
-  .about-hero__inner { grid-template-columns: 1fr; }
+  .about-intro__inner { grid-template-columns: 1fr; }
   .about-hero__image-wrap { max-width: 500px; margin: 0 auto; }
   .about-hero__stats { flex-wrap: wrap; gap: 1.5rem; }
   .cards--two, .cards--three { grid-template-columns: 1fr; }
@@ -394,10 +513,12 @@
   .about-footer__grid { grid-template-columns: 1fr; }
   .about-footer__bottom { flex-direction: column; text-align: center; }
   .about-footer__desc { max-width: none; }
+  .about-hero { min-height: 50vh; padding: 2rem 1rem 4rem; }
+  .about-hero__title { font-size: 1.6rem; }
 }
 
 @media (max-width: 480px) {
-  .about-hero { padding: 2rem 0.75rem; }
+  .about-hero { padding: 1.5rem 0.75rem 4rem; min-height: 45vh; }
   .about-hero__title { font-size: 1.5rem; }
   .about-hero__stats { gap: 1rem; }
   .stat__number { font-size: 1.5rem; }

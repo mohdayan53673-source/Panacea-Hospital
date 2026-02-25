@@ -138,6 +138,7 @@
   margin: 0;
   padding: 0;
   gap: 1.5rem;
+
 }
 .mainnav__links a {
   color: var(--panacea-text-muted);
@@ -188,7 +189,7 @@
   gap: 5px;
   transition: background 0.2s;
 }
-.mainnav__menu-btn:hover { background: var(--panacea-bg-grey); }
+.mainnav__menu-btn:hover { background: var(--panacea-bg-grey);}
 .mainnav__menu-icon {
   display: block;
   width: 22px;
@@ -320,11 +321,14 @@
   line-height: 1.5;  
   max-width: 280px;
 }
-.footer__social { display: flex; gap: 0.5rem; }
+.footer__social { display: flex; gap: 0.5rem;   width: 100%;  justify-content: center;}
 .footer__social a {
   width: 36px;
-  height: 36px;
+  height: 36px; 
+
+  align-items: center;
   border-radius: 50%;
+
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
   display: flex;

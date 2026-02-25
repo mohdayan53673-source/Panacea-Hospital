@@ -425,7 +425,7 @@
 .tech__title {
   font-size: 1.65rem;
   font-weight: 700;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.45rem;
   color: var(--panacea-text-dark);
   line-height: 1.3;
 }
@@ -516,7 +516,7 @@
   .cards--specialty { grid-template-columns: repeat(2, 1fr); }
   .tech__row { grid-template-columns: 1fr; }
   .tech__image-wrap { min-height: 260px; }
-  .tech__content { padding: 2rem 1.5rem; }
+  .tech__content { padding: 2rem 2rem; }
   .tech__content .btn { align-self: stretch; text-align: center; justify-content: center; }
   .visit__inner { grid-template-columns: 1fr; text-align: center; }
   .visit__item { justify-content: center; }
@@ -533,7 +533,7 @@
   .stats__card { padding: 1.25rem 1rem; }
   .cards--specialty { grid-template-columns: 1fr; }
   .tech { padding: 2.5rem 1rem; }
-  .tech__content { padding: 1.75rem 1rem; }
+  .tech__content { padding: 1rem 1rem; }
   .tech__title { font-size: 1.45rem; }
   .section { padding: 2rem 1rem; }
   .section__head { flex-direction: column; }

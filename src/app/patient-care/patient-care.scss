@@ -291,7 +291,7 @@
 }
 .family-content__text {
   font-size: 0.95rem;
-  color: var(--panacea-text-muted);
+  color: var(--panacea-text-muted); 
   margin: 0;
   line-height: 1.6;
   text-align: left;
@@ -490,3 +490,4 @@
   .care-footer { padding: 2rem 0.75rem 1rem; }
   .care-footer__desc { max-width: none; }
 }
+
