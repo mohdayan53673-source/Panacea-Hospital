@@ -325,7 +325,7 @@
 .card:hover {
   box-shadow: var(--hover-shadow);
   border-color: var(--panacea-blue);
-  transform: var(--hover-lift);
+  transform: var(--hover-lift);  
 }
 .card__icon {
   width: 56px;
@@ -418,7 +418,7 @@
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--panacea-blue);
+  color: var(--panacea-blue);  
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }

@@ -173,7 +173,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: var(--panacea-blue);
+  background: var(--panacea-blue);  
   margin: 0.5rem auto 0;
   border-radius: 2px;
 }
@@ -253,8 +253,8 @@
   display: grid;
   gap: 1.5rem;
 }
-.tech-grid--two { grid-template-columns: repeat(2, 1fr); }
-.tech-grid--three { grid-template-columns: repeat(3, 1fr); }
+.tech-grid--two { grid-template-columns: repeat(2, 1fr);}
+.tech-grid--three { grid-template-columns: repeat(3, 1fr);}
 .tech-card {
   background: #fff;
   padding: 1rem;
