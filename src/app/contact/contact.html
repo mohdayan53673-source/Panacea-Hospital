@@ -115,7 +115,9 @@
             <label class="contact-form__label" for="contact-message">Message<span class="contact-form__required">*</span></label>
             <textarea class="contact-form__input contact-form__textarea" id="contact-message" name="message" [(ngModel)]="form.message" required placeholder="Your message..." rows="5"></textarea>
           </div>
+          <div class="contact-form__button-container">            
           <button type="submit" class="btn btn--primary" [disabled]="contactForm.invalid">Send Message</button>
+          </div>
         </form>
           }
         </div>

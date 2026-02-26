@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '@env';
 
 @Component({
   selector: 'app-appointment',
@@ -17,41 +18,25 @@ export class Appointment {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      // Using FormSubmit.co - sends directly to mohdayan4673@gmail.com
-      // No account required! Just use your email in the URL.
-      const formData = new FormData();
-      formData.append('name', this.model.name);
-      formData.append('phone', this.model.phone);
-      formData.append('email', this.model.email || 'no-email@provided.com');
-      formData.append('department', this.model.department || 'Not specified');
-      formData.append('date', this.model.date || 'Not specified');
-      formData.append('time', this.model.time || 'Not specified');
-      formData.append('message', this.model.message || 'No message');
-      formData.append('_subject', 'New Appointment Request - Panacea Hospital');
-      formData.append('_captcha', 'false');
-      formData.append('_template', 'table');
+      const body = {
+        name: this.model.name,
+        phone: this.model.phone,
+        email: this.model.email || '',
+        department: this.model.department || '',
+        date: this.model.date || '',
+        time: this.model.time || '',
+        message: this.model.message || '',
+      };
 
-      this.http.post('https://formsubmit.co/mohdayan4673@gmail.com', formData, {
-        responseType: 'text'
-      })
-        .subscribe({
-          next: () => {
-            console.log('Form submitted successfully');
-            this.submitted = true;
-            form.resetForm();
-          },
-          error: (err: { status?: number }) => {
-            // FormSubmit returns 200 with HTML, which is actually a success
-            if (err.status === 200) {
-              console.log('Form submitted successfully (HTML response)');
-              this.submitted = true;
-              form.resetForm();
-            } else {
-              console.error('Error submitting form', err);
-              alert('Oops! Something went wrong. Please try again.');
-            }
-          }
-        });
+      this.http.post<{ success: boolean; message?: string }>(`${environment.apiUrl}/api/appointments`, body).subscribe({
+        next: () => {
+          this.submitted = true;
+          form.resetForm();
+        },
+        error: () => {
+          alert('Something went wrong. Please try again or call us to book your appointment.');
+        },
+      });
     }
   }
 }

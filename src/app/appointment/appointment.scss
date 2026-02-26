@@ -126,6 +126,7 @@
   background: #fff;
   border: 2px solid var(--panacea-border);
   color: var(--panacea-text-dark);
+  margin-bottom:1rem;
 }
 .btn--outline:hover {
   border-color: var(--panacea-blue);
@@ -214,8 +215,9 @@
   color: var(--panacea-blue);
   font-weight: 600;
   text-decoration: none;
+
 }
-.contact-card__link:hover { text-decoration: underline; }
+
 .emergency-cta {
   background: var(--panacea-blue-dark);  
     color: #fff;
@@ -224,7 +226,7 @@
 }
 .emergency-cta__title {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 700;  
   margin: 0 0 0.75rem;
 }
 
