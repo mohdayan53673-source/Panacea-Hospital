@@ -170,7 +170,7 @@
 }
 .section__title::after {
   content: '';
-  display: block;
+  display: block; 
   width: 60px;
   height: 4px;
   background: var(--panacea-blue);  
@@ -451,7 +451,7 @@
   
   
 }
-.tech-footer__contact-link:hover { color: #fff; text-decoration: underline; }
+.tech-footer__contact-link:hover { color: #fff; text-decoration:underline; }
 .tech-footer__bottom {
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
