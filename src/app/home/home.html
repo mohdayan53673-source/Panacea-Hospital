@@ -142,13 +142,7 @@
         </div>
         <a routerLink="/medical-departments-services" class="section__link">View All Services →</a>
       </div>
-      <!-- <div class="section__head">
-        <div>
-          <h2 class="section__title section__title--left">Our Services</h2>
-          <p class="section__tagline section__tagline--left">From emergency care to diagnostics and critical care—we are here for you around the clock.</p>
-        </div>
-        <a routerLink="/services" class="section__link">View All Services →</a>
-      </div> -->
+      
       <div class="cards cards--specialty">
         <div class="card card--specialty" style="background-color:#f1f5f9">
           <div class="card__icon card__icon--red">
@@ -185,6 +179,41 @@
           <h3 class="card__title">Modular Operation Theatres</h3>
           <p class="card__text">State-of-the-art OTs with advanced equipment for complex procedures.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Doctors (preview) -->
+  <section class="section section--grey doctors-section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title section__title--left">Our Doctors</h2>
+          <p class="section__tagline section__tagline--left">Our team of experienced specialists is dedicated to providing you with the highest standard of care. Consultation timings and availability for each specialist.</p>
+        </div>
+        <a routerLink="/our-doctors" class="section__link">View All Doctors →</a>
+      </div>
+      <div class="doctors-grid">
+        @for (doctor of doctors; track doctor.name) {
+          <article class="doctor-card">
+            <h3 class="doctor-card__name">{{ doctor.name }}</h3>
+            <div class="doctor-card__row">
+              <div class="doctor-card__avatar" [style.background]="doctor.avatarColor" [style.color]="'#fff'" aria-hidden="true">
+                @if (doctor.avatarImage) {
+                  <img [src]="doctor.avatarImage" [alt]="doctor.name" class="doctor-card__avatar-img" />
+                } @else {
+                  <span class="doctor-card__avatar-initials">{{ doctor.initials }}</span>
+                }
+              </div>
+              <div class="doctor-card__info">
+                <p class="doctor-card__specialization">{{ doctor.specialization }}</p>
+                <p class="doctor-card__qualifications">{{ doctor.qualifications }}</p>
+                <p class="doctor-card__timings">Timings: {{ doctor.timings }}</p>
+                <p class="doctor-card__availability">{{ doctor.availability }}</p>
+              </div>
+            </div>
+          </article>
+        }
       </div>
     </div>
   </section>

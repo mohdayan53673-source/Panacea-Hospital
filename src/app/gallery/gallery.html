@@ -1,0 +1,81 @@
+<div class="gallery-page">
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <p class="page-hero__label">VISUAL TOUR</p>
+      <h1 class="page-hero__title">Gallery</h1>
+      <p class="page-hero__desc">Explore our facilities, wards, operation theatres, diagnostics, and team. Panacea Hospital is equipped with modern infrastructure to serve you better.</p>
+    </div>
+    <div class="page-hero__marquee">
+      <div class="page-hero__marquee-sign">
+        <span class="page-hero__marquee-dot"></span>
+        <span>24/7</span>
+      </div>
+      <div class="page-hero__marquee-track" aria-hidden="true">
+        <div class="page-hero__marquee-inner">
+          <span>ICU</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>OT</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>NICU</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Lab</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Radiology</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>ICU</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>OT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters + Grid -->
+  <section class="section section--grey gallery-section">
+    <div class="container gallery-container">
+      <h2 class="section__title">Our Facilities</h2>
+      <p class="section__tagline">Browse by category or scroll through all.</p>
+
+      <div class="gallery-filters">
+        @for (cat of categories; track cat.id) {
+          <button
+            type="button"
+            class="gallery-filter__btn"
+            [class.gallery-filter__btn--active]="selectedCategory === cat.id"
+            (click)="setCategory(cat.id)"
+          >
+            {{ cat.label }}
+          </button>
+        }
+      </div>
+
+      <div class="gallery-grid">
+        @for (item of filteredItems; track item.src + item.title) {
+          <article class="gallery-card">
+            <div class="gallery-card__image-wrap">
+              @if (!item.failed) {
+                <img
+                  [src]="item.src"
+                  [alt]="item.title"
+                  class="gallery-card__image"
+                  loading="lazy"
+                  (error)="onImageError(item)"
+                />
+              }
+              @if (item.failed) {
+                <div class="gallery-card__placeholder">
+                  <span class="gallery-card__placeholder-text">Photo</span>
+                </div>
+              }
+              <div class="gallery-card__overlay">
+                <span class="gallery-card__title">{{ item.title }}</span>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</div>

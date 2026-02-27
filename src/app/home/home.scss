@@ -309,6 +309,123 @@
   border-radius: 2px;
 }
 
+// Doctors section (home) — same look as our-doctors page
+.doctors-section .container {
+  max-width: 1320px;
+}
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.doctor-card {
+  background: linear-gradient(165deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  min-height: 220px;
+  padding: 2rem 2rem 2.25rem;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 10px 30px rgba(37, 99, 235, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.02) inset;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s var(--anim-ease), transform 0.4s var(--anim-ease), border-color 0.3s;
+}
+.doctor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--panacea-blue), #60a5fa);
+  border-radius: 20px 20px 0 0;
+}
+.doctor-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(37, 99, 235, 0.15),
+    0 12px 28px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(37, 99, 235, 0.2);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+.doctor-card__name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--panacea-text-dark);
+  margin: 0 0 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.15);
+}
+.doctor-card__row {
+  display: flex;
+  gap: 1.35rem;
+  align-items: flex-start;
+}
+.doctor-card__avatar {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  transition: transform 0.35s var(--anim-ease), box-shadow 0.35s var(--anim-ease);
+  overflow: hidden;
+}
+.doctor-card:hover .doctor-card__avatar {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+.doctor-card__avatar-initials {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.doctor-card__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.doctor-card__info {
+  flex: 1;
+  min-width: 0;
+}
+.doctor-card__specialization,
+.doctor-card__qualifications,
+.doctor-card__timings,
+.doctor-card__availability {
+  font-size: 0.95rem;
+  color: var(--panacea-text-muted);
+  margin: 0 0 0.4rem;
+  line-height: 1.5;
+}
+.doctor-card__specialization {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--panacea-text-dark);
+}
+.doctor-card__qualifications {
+  font-size: 0.88rem;
+  color: var(--panacea-blue);
+  font-weight: 500;
+}
+.doctor-card__timings {
+  font-weight: 600;
+  color: var(--panacea-text-dark);
+}
+.doctor-card__availability {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 // Cards
 .cards { display: grid; gap: 1.5rem; }
 .cards--three { grid-template-columns: repeat(3, 1fr); }
@@ -514,6 +631,12 @@
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .cards--three { grid-template-columns: 1fr; }
   .cards--specialty { grid-template-columns: repeat(2, 1fr); }
+  .doctors-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+  .doctor-card { min-height: 200px; padding: 1.75rem 1.75rem 2rem; }
+  .doctor-card__avatar { width: 76px; height: 76px; }
   .tech__row { grid-template-columns: 1fr; }
   .tech__image-wrap { min-height: 260px; }
   .tech__content { padding: 2rem 2rem; }
@@ -532,6 +655,20 @@
   .stats__grid { grid-template-columns: 1fr; }
   .stats__card { padding: 1.25rem 1rem; }
   .cards--specialty { grid-template-columns: 1fr; }
+  .doctors-section .container { max-width: var(--container); }
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .doctor-card {
+    min-height: 200px;
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+  .doctor-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  .doctor-card__name { font-size: 1.05rem; margin-bottom: 1rem; padding-bottom: 0.6rem; }
+  .doctor-card__avatar { width: 72px; height: 72px; }
   .tech { padding: 2.5rem 1rem; }
   .tech__content { padding: 1rem 1rem; }
   .tech__title { font-size: 1.45rem; }

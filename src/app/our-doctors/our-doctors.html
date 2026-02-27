@@ -1,0 +1,100 @@
+<div class="doctors-page">
+  <!-- Hero section (same structure as Services page) -->
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <p class="page-hero__label">MEET OUR EXPERT TEAM</p>
+      <h1 class="page-hero__title">Our Doctors</h1>
+      <p class="page-hero__desc">Our team of experienced specialists is dedicated to providing you with the highest standard of care. From general medicine to critical care and surgery, our doctors bring expertise and compassion to every consultation.</p>
+    </div>
+    <div class="page-hero__marquee">
+      <div class="page-hero__marquee-sign">
+        <span class="page-hero__marquee-dot"></span>
+        <span>24/7</span>
+      </div>
+      <div class="page-hero__marquee-track" aria-hidden="true">
+        <div class="page-hero__marquee-inner">
+          <span>Cardiology</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Orthopaedics</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Ophthalmology</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Surgery</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Pediatrics</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Neurosurgery</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Cardiology</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Orthopaedics</span>
+          <span class="page-hero__marquee-sep">•</span>
+          <span>Critical Care</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors grid -->
+  <section class="section section--grey doctors-section">
+    <div class="container">
+      <h2 class="section__title">Our Doctors</h2>
+      <p class="section__tagline">Consultation timings and availability for each specialist.</p>
+
+      <div class="doctors-grid">
+        @for (doctor of doctors; track doctor.name) {
+          <article class="doctor-card">
+            <h3 class="doctor-card__name">{{ doctor.name }}</h3>
+            <div class="doctor-card__row">
+              <div class="doctor-card__avatar" [style.background]="doctor.avatarColor" [style.color]="'#fff'" aria-hidden="true">
+                @if (doctor.avatarImage) {
+                  <img [src]="doctor.avatarImage" [alt]="doctor.name" class="doctor-card__avatar-img" />
+                } @else {
+                  <span class="doctor-card__avatar-initials">{{ doctor.initials }}</span>
+                }
+              </div>
+              <div class="doctor-card__info">
+                <p class="doctor-card__specialization">{{ doctor.specialization }}</p>
+                <p class="doctor-card__qualifications">{{ doctor.qualifications }}</p>
+                <p class="doctor-card__timings">Timings: {{ doctor.timings }}</p>
+                <p class="doctor-card__availability">{{ doctor.availability }}</p>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section--white testimonials-section">
+    <div class="container testimonials-container">
+      <h2 class="testimonials__title">Testimonials</h2>
+      <p class="testimonials__tagline">What our patients say about Panacea Hospital.</p>
+      <div class="testimonials-grid">
+        @for (t of testimonials; track t.author) {
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">"{{ t.quote }}"</p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">— {{ t.author }}</span>
+              <span class="testimonial-card__details">({{ t.details }})</span>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--grey">
+    <div class="container cta-block">
+      <h2 class="cta-block__title">Need to consult a specialist?</h2>
+      <p class="cta-block__desc">Book an appointment or reach out to us for any queries.</p>
+      <div class="cta-block__actions">
+        <a routerLink="/appointment" class="btn btn--primary">Book Appointment</a>
+        <a routerLink="/contact" class="btn btn--outline btn--blue">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</div>
