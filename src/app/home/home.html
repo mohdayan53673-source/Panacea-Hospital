@@ -1,17 +1,17 @@
 <div class="home">
-  <!-- Hero - carousel with 8 slides (repeated loop) -->
+  <!-- Hero - carousel with 8 slides (dots to change image) -->
   <section class="hero">
     <div class="hero__carousel" aria-hidden="true">
-      <div class="hero__slide hero__slide--1"></div>
-      <div class="hero__slide hero__slide--2"></div>
-      <div class="hero__slide hero__slide--3"></div>
-      <div class="hero__slide hero__slide--4"></div>
-      <div class="hero__slide hero__slide--5"></div>
-      <div class="hero__slide hero__slide--6"></div>
-      <div class="hero__slide hero__slide--7"></div>
-      <div class="hero__slide hero__slide--8"></div>
+      @for (i of slides; track i) {
+        <div class="hero__slide hero__slide--{{ i + 1 }}" [class.hero__slide--active]="currentSlide === i"></div>
+      }
     </div>
     <div class="hero__carousel-overlay" aria-hidden="true"></div>
+    <div class="hero__dots" role="tablist" aria-label="Hero carousel slides">
+      @for (i of slides; track i) {
+        <button type="button" class="hero__dot" [class.hero__dot--active]="currentSlide === i" (click)="goToSlide(i)" [attr.aria-label]="'Go to slide ' + (i + 1)" [attr.aria-selected]="currentSlide === i" role="tab"></button>
+      }
+    </div>
     <!-- Marquee strip at bottom: emergency red sign + home-related sliding text -->
     <div class="hero__marquee">
       <div class="hero__marquee-sign">
@@ -264,7 +264,7 @@
         <p class="visit__desc">Conveniently located in Amroha to serve you better. Reach out to us for any queries or emergencies.</p>
         <p class="visit__item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span><strong>Our Address:</strong> Near Railway Crossing, Joya Road, Amroha - 244221 (UP)</span>
+          <span><strong>Our Address:</strong> Near SP Office , Joya Road Amroha - 244221 (UP)</span>
         </p>
         <p class="visit__item">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -273,8 +273,8 @@
       </div>
       <div class="visit__map-wrap">
         <div class="visit__map-pin" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.2207803214023!2d78.46791877614311!3d28.862050473619934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390b091438c2537f%3A0xf70ace5c70b49200!2sPanacea%20hospital%20and%20Research%20Center%20Amroha%20Joya%20Road!5e0!3m2!1sen!2sin!4v1772695246287!5m2!1sen!2sin" width="600" height="350" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        
         <a href="https://maps.google.com/?q=Joya+Road+Amroha+244221" target="_blank" rel="noopener" class="btn btn--white btn--red">Get Directions</a>
       </div>
     </div>

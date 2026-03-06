@@ -15,62 +15,57 @@
   background-color: var(--panacea-bg-grey);
 }
 .hero__slide {
-  position: absolute; 
+  position: absolute;
   inset: 0;
   background-repeat: no-repeat;
-  margin:0;
-  background-position:  center;
+  margin: 0;
+  background-position: center;
   background-size: cover;
   opacity: 0;
-  animation: heroSlideFade1 40s ease-in-out infinite;
+  transition: opacity 0.4s ease-in-out;
+}
+.hero__slide--active {
+  opacity: 1;
 }
 .hero__slide--1 { background-image: url('/Home-hero-banner.gif'); }
-.hero__slide--2 { background-image: url('/emergency.jpg'); animation-name: heroSlideFade2; }
-.hero__slide--3 { background-image: url('/icu.jpg'); animation-name: heroSlideFade3; }
-.hero__slide--4 { background-image: url('/path.jpg'); animation-name: heroSlideFade4; }
-.hero__slide--5 { background-image: url('/ot.jpg'); animation-name: heroSlideFade5; }
-.hero__slide--6 { background-image: url('/nicu.jpg'); animation-name: heroSlideFade6; }
-.hero__slide--7 { background-image: url('/dialysis.jpg'); animation-name: heroSlideFade7; }
-.hero__slide--8 { background-image: url('/dept-2.jpg'); animation-name: heroSlideFade8; }
-@keyframes heroSlideFade1 {
-  0%, 12% { opacity: 1; }
-  13%, 99% { opacity: 0; }
-  100% { opacity: 1; }
+.hero__slide--2 { background-image: url('/emergency.jpg'); }
+.hero__slide--3 { background-image: url('/icu.jpg'); }
+.hero__slide--4 { background-image: url('/path.jpg'); }
+.hero__slide--5 { background-image: url('/ot.jpg'); }
+.hero__slide--6 { background-image: url('/nicu.jpg'); }
+.hero__slide--7 { background-image: url('/dialysis.jpg'); }
+.hero__slide--8 { background-image: url('/dept-2.jpg'); }
+
+// Dots below hero images to change slide
+.hero__dots {
+  position: absolute;
+  bottom: 52px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
-@keyframes heroSlideFade2 {
-  0%, 12% { opacity: 0; }
-  13%, 25% { opacity: 1; }
-  26%, 100% { opacity: 0; }
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
 }
-@keyframes heroSlideFade3 {
-  0%, 25% { opacity: 0; }
-  26%, 37% { opacity: 1; }
-  38%, 100% { opacity: 0; }
+.hero__dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
 }
-@keyframes heroSlideFade4 {
-  0%, 37% { opacity: 0; }
-  38%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-@keyframes heroSlideFade5 {
-  0%, 50% { opacity: 0; }
-  51%, 62% { opacity: 1; }
-  63%, 100% { opacity: 0; }
-}
-@keyframes heroSlideFade6 {
-  0%, 62% { opacity: 0; }
-  63%, 75% { opacity: 1; }
-  76%, 100% { opacity: 0; }
-}
-@keyframes heroSlideFade7 {
-  0%, 75% { opacity: 0; }
-  76%, 87% { opacity: 1; }
-  88%, 100% { opacity: 0; }
-}
-@keyframes heroSlideFade8 {
-  0%, 87% { opacity: 0; }
-  88%, 99% { opacity: 1; }
-  100% { opacity: 0; }
+.hero__dot--active {
+  background: #fff;
+  transform: scale(1.15);
 }
 .hero__carousel-overlay {
   position: absolute;
@@ -496,7 +491,7 @@
 .tech__image {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&q=80') center/cover;
+  background: url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -622,7 +617,7 @@
   align-items: center;
   gap: 1rem;
 }
-.visit__map-pin { color: rgba(255,255,255,0.3); }
+.visit__map-pin { color: rgba(255,255,255,0.3); height: 350px; width: 600px;border-radius: 10px; }
 .visit__map-pin svg { display: block; }
 
 @media (max-width: 900px) {

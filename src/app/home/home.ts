@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 interface Doctor {
@@ -18,7 +18,25 @@ interface Doctor {
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class Home implements OnInit, OnDestroy {
+  readonly slides = [0, 1, 2, 3, 4, 5, 6, 7];
+  currentSlide = 0;
+  private autoAdvance?: ReturnType<typeof setInterval>;
+
+  ngOnInit(): void {
+    this.autoAdvance = setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    }, 5000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.autoAdvance) clearInterval(this.autoAdvance);
+  }
+
+  goToSlide(index: number): void {
+    this.currentSlide = index;
+  }
+
   doctors: Doctor[] = [
     { name: 'DR. CHITRAK BANSAL', specialization: 'Medicine, Cardiology & Diabetes', qualifications: '(MBBS, MD, MFM, FCC)', timings: '10:00 AM - 4:00 PM', availability: '(Monday to Saturday)', initials: 'CB', avatarColor: '#2563eb' },
     { name: 'DR. NAUSHAD KHAN', specialization: 'Orthopaedics', qualifications: '(MBBS, MS)', timings: '10:00 AM - 4:00 PM', availability: '(Monday to Saturday)', initials: 'NK', avatarColor: '#059669' },

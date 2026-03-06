@@ -39,7 +39,7 @@ export class OurDoctorsPage {
     { name: 'DR. SACHIN DEV', specialization: 'Dental & Maxillofacial Surgeon', qualifications: '(BDS, MDS)', timings: '2:00 PM - 5:00 PM', availability: '(Monday to Saturday)', initials: 'SD', avatarColor: '#0369a1' },
   ];
 
-  testimonials: Testimonial[] = [
+  testimonials: Testimonial[]= [
     {
       quote: 'Opting for a knee replacement was not an easy decision, however Dr Umesh and Dr Shailesh counselled me very nicely and put my all fears to rest. Excellent care and attachment at all times with availability for help and advice.',
       author: 'Neeraj Gupta',
@@ -55,5 +55,6 @@ export class OurDoctorsPage {
       author: 'Manika Gupta',
       details: '26 F, Multiple injuries',
     },
+    
   ];
 }
