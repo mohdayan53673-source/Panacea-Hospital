@@ -223,6 +223,7 @@
   padding: 2rem 1rem;
   margin-top: -1px;
 }
+
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -266,6 +267,15 @@
   margin: 0 0 0.5rem;
   text-align: center;
   animation: fadeInUp var(--anim-duration) var(--anim-ease) both;
+}
+
+.direction-link {
+
+background-color: white;
+padding: 10px 20px 10px 20px;
+border-radius: 10px;
+color: var(--panacea-blue);
+text-decoration: none;
 }
 .section__title--left { text-align: left; }
 .section__tagline {
@@ -464,7 +474,7 @@
 .card:nth-child(3) { animation-delay: 0.24s; }
 .card:nth-child(4) { animation-delay: 0.32s; }
 .card:nth-child(5) { animation-delay: 0.4s; }
-.card--specialty { text-align: center; }
+.card--specialty { text-align: center; background-color: #f8fafc; }
 
 // Tech – Latest Medical Technology (redesigned)
 .tech {
@@ -598,6 +608,8 @@
   grid-template-columns: 1fr auto;
   gap: 3rem;
   align-items: center;
+  padding-left: var(--container-padding, 1rem);
+  padding-right: var(--container-padding, 1rem);
   animation: fadeInUp var(--anim-duration) var(--anim-ease) 0.1s both;
 }
 .visit__title { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.5rem; }
@@ -609,6 +621,7 @@
   margin-bottom: 1rem;
   font-size: 0.95rem;
 }
+.visit__item:last-of-type { margin-bottom: 0; }
 .visit__item svg { flex-shrink: 0; margin-top: 0.15rem; opacity: 0.9; }
 .visit__map-wrap {
   position: relative;
@@ -616,9 +629,31 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 600px;
+  min-width: 600px;
+  flex-shrink: 0;
 }
-.visit__map-pin { color: rgba(255,255,255,0.3); height: 350px; width: 600px;border-radius: 10px; }
+.visit__map-pin {
+  color: rgba(255,255,255,0.3);
+  width: 600px;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.visit__map-pin iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  border-radius: 10px;
+}
 .visit__map-pin svg { display: block; }
+.visit__map-wrap .btn { min-width: 160px; }
 
 @media (max-width: 900px) {
   .hero { min-height: 70vh; padding: 2.5rem 1rem; }
@@ -636,8 +671,10 @@
   .tech__image-wrap { min-height: 260px; }
   .tech__content { padding: 2rem 2rem; }
   .tech__content .btn { align-self: stretch; text-align: center; justify-content: center; }
-  .visit__inner { grid-template-columns: 1fr; text-align: center; }
+  .visit__inner { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
   .visit__item { justify-content: center; }
+  .visit__map-wrap { width: 100%; min-width: 0; max-width: 600px; margin: 0 auto; flex-shrink: 1; }
+  .visit__map-pin { width: 100%; height: 350px; max-height: 380px; flex-shrink: 1; }
 }
 
 @media (max-width: 600px) {
@@ -649,6 +686,7 @@
   .hero__accredits { font-size: 0.8rem; }
   .stats__grid { grid-template-columns: 1fr; }
   .stats__card { padding: 1.25rem 1rem; }
+  .stats__card strong { font-size: 1rem; }
   .cards--specialty { grid-template-columns: 1fr; }
   .doctors-section .container { max-width: var(--container); }
   .doctors-grid {
@@ -672,6 +710,10 @@
   .section__title { font-size: 1.5rem; }
   .visit__inner { gap: 2rem; }
   .visit__title { font-size: 1.35rem; }
+  .visit__desc { font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .visit__item { font-size: 0.9rem; flex-wrap: wrap; justify-content: center; text-align: center; }
+  .visit__map-pin { height: 280px; max-height: none; }
+  .visit__map-wrap .btn { width: 100%; max-width: 320px; min-width: 0; }
 }
 
 @media (max-width: 480px) {
@@ -685,4 +727,12 @@
   .section { padding: 1.5rem 0.75rem; }
   .card { padding: 1.25rem; }
   .visit { padding: 2rem 0.75rem; }
+  .visit__inner { gap: 1.5rem; padding-left: var(--container-padding, 0.75rem); padding-right: var(--container-padding, 0.75rem); }
+  .visit__title { font-size: 1.2rem; }
+  .visit__desc { font-size: 0.875rem; margin-bottom: 1rem; }
+  .visit__item { font-size: 0.85rem; margin-bottom: 0.75rem; }
+  .visit__item svg { width: 18px; height: 18px; }
+  .visit__map-pin { height: 240px; border-radius: 8px; }
+  .visit__map-pin iframe { border-radius: 8px; }
+  .visit__map-wrap .btn { width: 100%; max-width: 100%; padding: 0.65rem 1rem; font-size: 0.9rem; }
 }

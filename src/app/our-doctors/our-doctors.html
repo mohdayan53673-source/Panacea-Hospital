@@ -40,7 +40,7 @@
   <section class="section section--grey doctors-section">
     <div class="container">
       <h2 class="section__title">Our Doctors</h2>
-      <p class="section__tagline">Consultation timings and availability for each specialist.</p>
+      <p class="section__tagline">Consultation timings and availability for each speciality.</p>
 
       <div class="doctors-grid">
         @for (doctor of doctors; track doctor.name) {
@@ -51,7 +51,7 @@
                 @if (doctor.avatarImage) {
                   <img [src]="doctor.avatarImage" [alt]="doctor.name" class="doctor-card__avatar-img" />
                 } @else {
-                  <span class="doctor-card__avatar-initials">{{ doctor.initials }}</span>
+                   <span class="doctor-card__avatar-initials">{{ doctor.initials }}</span>                  
                 }
               </div>
               <div class="doctor-card__info">

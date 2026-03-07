@@ -209,7 +209,7 @@
   text-decoration: none;
   margin-bottom: 0.35rem;
 }
-.contact-card__phone:hover { text-decoration: underline; }
+
 .contact-card__link {
   font-size: 0.95rem;
   color: var(--panacea-blue);
@@ -254,6 +254,6 @@
 @media (max-width: 480px) {
   .page-hero { padding: 1.25rem 0.75rem; }
   .page-hero__title { font-size: 1.35rem; }
-  .appointment-form-section { padding: 1.25rem; }
+   .appointment-form-section { padding: 1.25rem; }
   .form__input, .form__select, .form__textarea { font-size: 16px; }
 }

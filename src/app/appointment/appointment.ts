@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-appointment',
@@ -32,9 +33,20 @@ export class Appointment {
         next: () => {
           this.submitted = true;
           form.resetForm();
+          Swal.fire({
+            icon: 'success',
+            title: 'Request Received',
+            text: 'Thank you! We will contact you shortly to confirm your appointment.',
+            confirmButtonColor: '#2563eb',
+          });
         },
         error: () => {
-          alert('Something went wrong. Please try again or call us to book your appointment.');
+          Swal.fire({
+            icon: 'error',
+            title: 'Something went wrong',
+            text: 'Please try again or call us to book your appointment.',
+            confirmButtonColor: '#2563eb',
+          });
         },
       });
     }
