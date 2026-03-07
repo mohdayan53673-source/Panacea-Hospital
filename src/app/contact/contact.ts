@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -34,9 +35,20 @@ export class Contact {
       next: () => {
         this.submitted = true;
         this.form = { name: '', email: '', phone: '', message: '' };
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent',
+          text: 'Thank you for reaching out! We will get back to you soon.',
+          confirmButtonColor: '#2563eb',
+        });
       },
       error: () => {
-        alert('Something went wrong. Please try again or call us directly.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Something went wrong',
+          text: 'Please try again or call us directly.',
+          confirmButtonColor: '#2563eb',
+        });
       },
     });
   }

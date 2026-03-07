@@ -233,19 +233,79 @@
   animation: fadeIn var(--anim-duration, 0.4s) var(--anim-ease, ease-out);
 }
 
-// Tablet and below: show hamburger, hide desktop links
-@media (max-width: 768px) {
-  .app-main { padding-top: 8.5rem; } // taller header when topbar wraps
-  .topbar__item--center { margin-left: 0; margin-right: 0; }
-  .topbar__inner { justify-content: center;}
-  .topbar__item:first-child { order: 1; }
-  .topbar__item--center { order: 3; width: 100%; justify-content: center; text-align: center; }
-  .topbar__item:last-child { order: 2; }
+// 768px–1020px: all nav links visible in the bar (no hamburger)
+@media (min-width: 768px) and (max-width: 1020px) {
+  .mainnav {
+    padding: 0.5rem 0.75rem;
+  }
+  .mainnav__inner {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .mainnav__logo {
+    font-size: 0.8rem;
+    min-width: 0;
+  }
+  .mainnav__logo-text {
+    white-space: normal;
+    max-width: 140px;
+    line-height: 1.15;
+    font-size: 0.78rem;
+  }
+  .mainnav__logo-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+  .mainnav__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.6rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .mainnav__links a {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.15rem;
+    white-space: nowrap;
+  }
+  .mainnav__links a.mainnav__cta {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+  }
+  .mainnav__cta--desktop {
+    display: inline-flex;
+  }
+  .mainnav__menu-btn {
+    display: none;
+  }
+  .mainnav__mobile {
+    display: none;
+  }
+}
+
+// 767px and below: show hamburger, hide desktop links
+@media (max-width: 767px) {
+  .app-main { padding-top: 8.5rem; }
   .mainnav__links { display: none; }
   .mainnav__cta--desktop { display: none; }
   .mainnav__menu-btn { display: flex; }
   .mainnav__mobile { display: block; }
-  .mainnav__logo-text { white-space: normal; max-width: 180px; line-height: 1.2; }
+}
+
+// 768px and below: topbar wraps, tighter nav
+@media (max-width: 768px) {
+  .app-main { padding-top: 8.5rem; }
+  .topbar__item--center { margin-left: 0; margin-right: 0; }
+  .topbar__inner { justify-content: center; }
+  .topbar__item:first-child { order: 1; }
+  .topbar__item--center { order: 3; width: 100%; justify-content: center; text-align: center; }
+  .topbar__item:last-child { order: 2; }
+  .mainnav__logo-text {
+    white-space: normal;
+    max-width: 180px;
+    line-height: 1.2;
+  }
 }
 
 @media (max-width: 480px) {
